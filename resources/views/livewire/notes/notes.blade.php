@@ -78,7 +78,9 @@ new class extends Component {
                     <div class="flex justify-between items-end mt-4 gap-1">
                         <p class="text-xs">Recipent: <span class="font-semibold">{{ $note->recipient }}</span></p>
                         <div >
-                            <x-button.circle icon="eye" href="{{ route('notes.view',$note) }}"></x-button.circle>
+                            @if($note->is_published)
+                                <x-button.circle icon="eye" href="{{ route('notes.view',$note) }}"></x-button.circle>
+                            @endif
                             <x-button.circle icon="trash" wire:click="deleteNote('{{ $note->id }}')" class="hover:bg-red-600 hover:text-red-600" ></x-button.circle>
                         </div>
                     </div>

@@ -17,8 +17,8 @@ class SendEmail implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public Note $note;
-    public function __construct($note)
+    
+    public function __construct(public Note $note)
     {
         //
     }
